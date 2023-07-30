@@ -1,0 +1,497 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>Nargiz-Sarvar | Xususiy Korxonasi</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- style css -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <!-- fevicon -->
+    <link rel="icon" href="{% static 'korxona.png' %}" type="image/gif"/>
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/jquery.mCustomScrollbar.min.css' %}">
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
+          media="screen">
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+</head>
+<style>/* mockup code */
+
+.hh {
+    background: #ffffff;
+    border: solid 1px #e6e6e6;
+    border-radius: 2px;
+    display: inline-block;
+    height: 100px;
+    line-height: 100px;
+    margin: 5px;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    width: 100px;
+}
+
+.hh span {
+    background: #f2594b;
+    border-radius: 4px;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: normal;
+    padding: 5px 10px;
+    position: relative;
+    text-transform: uppercase;
+    z-index: 1;
+}
+.about-box .titlepage h2::after {
+     content: "";
+     position: absolute;
+     left: -298px;
+     top: 70%;
+     margin: 10px auto;
+     height: 6px;
+     background: #fff;
+     width: 45%;
+     right: -295px;
+}
+.hh span:last-child {
+    margin-left: -20px;
+}
+
+.hh:before,
+.hh:after {
+    background: #ffffff;
+    border: solid 3px #9fb4cc;
+    border-radius: 4px;
+    content: '';
+    display: block;
+    height: 35px;
+    left: 50%;
+    margin: -17px 0 0 -12px;
+    position: absolute;
+    top: 50%;
+    /*transform:translate(-50%,-50%);*/
+
+    width: 25px;
+}
+
+.hh:hover:before,
+.hh:hover:after {
+    background: #e2e8f0;
+}
+/*a:before{transform:translate(-30%,-60%);}*/
+
+.hh:before {
+    margin: -23px 0 0 -5px;
+}
+
+.hh:hover {
+    background: #e2e8f0;
+    border-color: #9fb4cc;
+
+}
+
+.hh:active {
+    background: #dae0e8;
+    box-shadow: inset 0 2px 2px rgba(0, 0, 0, .25);
+}
+.contact .titlepage h2::after {
+     content: "";
+     position: absolute;
+     left: -831px;
+     top: 70%;
+     margin: 10px auto;
+     width: 25%;
+     height: 6px;
+     background: #308409;
+     right: -830px;
+}
+.hh span:first-child {
+    display: none;
+}
+
+.hh:hover span:first-child {
+    display: inline-block;
+}
+
+.hh:hover span:last-child {
+    display: none;
+}
+/* custom code for the demo */
+
+html,
+button,
+input,
+select,
+textarea {
+    font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+}</style>
+<!-- body -->
+<body class="main-layout">
+<!-- loader  -->
+<div class="loader_bg">
+    <div class="loader"><img src="{% static 'korxona.png' %}" alt="#"/></div>
+</div>
+<!-- end loader -->
+<!-- header -->
+<header>
+
+<script>window.CKEDITOR_BASEPATH = '/my_static/ckeditor/ckeditor/';</script>
+  {% if messages %}
+{% for message in messages %}
+{% if message.tags == 'error' %}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert"
+            aria-label="Close"></button>
+</div>
+{% endif %}
+{% endfor %}
+{% endif %}
+
+{% if messages %}
+{% for message in messages %}
+{% if message.tags == 'success' %}
+<div class="alert alert-primary alert-dismissible fade show" role="alert">
+    {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert"
+            aria-label="Close"></button>
+</div>
+{% endif %}
+{% endfor %}
+{% endif %}
+
+{% if messages %}
+{% for message in messages %}
+{% if message.tags == 'warning' %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert"
+            aria-label="Close"></button>
+</div>
+{% endif %}
+{% endfor %}
+{% endif %}
+    <!-- header inner -->
+    <div class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                    <div class="full">
+                        <div class="center-desk">
+                            <div class="logo"><a href="#"><img src="{% static 'korxona.png' %}" alt="#"></a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                    <div class="menu-area">
+                        <div class="limit-box">
+                            <nav class="main-menu">
+                                <ul class="menu-area-main">
+                                    <li class="active">
+                                    <li><a href="#">Asosiy</a></li>
+                                    <li><a href="#blog">Blog</a></li>
+                                    <li><a href="#about">Haqida</a></li>
+                                    <li><a href="#gallery">Hujjatlar</a></li>
+                                    <li><a href="#contact">Bog'lanish</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end header inner -->
+</header>
+<!-- end header -->
+<section>
+    <div id="main_slider" class="carousel slide banner-main" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#main_slider" data-slide-to="0" class="active"></li>
+            <li data-target="#main_slider" data-slide-to="1"></li>
+            <li data-target="#main_slider" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            {% for i in karusel1 %}
+            <div class="carousel-item active">
+                <div class="container">
+                    <div class="row marginii">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                            <div class="carousel-caption ">
+                                <h1>{{ i.name }}</h1>
+                                <p>{{ i.info }}</p>
+                                <a class="btn btn-lg btn-primary" href="#" role="button">About</a>
+                                <a class="btn btn-lg btn-primary" href="#" role="button">Contact US</a>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                            <div class="img-box">
+                                <figure><img src="{{ i.img.url }}" alt="img"/></figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% for i in karusel2 %}
+            <div class="carousel-item">
+                <div class="container">
+                    <div class="row marginii">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                            <div class="carousel-caption ">
+                                <h1>{{ i.name }}</h1>
+                                <p>{{ i.info }}</p>
+                                <a class="btn btn-lg btn-primary" href="#" role="button">About</a>
+                                <a class="btn btn-lg btn-primary" href="#" role="button">Contact US</a>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                            <div class="img-box ">
+                                <figure><img src="{{ i.img.url }}" alt="img"/></figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
+            <i class='fa fa-angle-left'></i></a>
+        <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
+            <i class='fa fa-angle-right'></i>
+        </a>
+    </div>
+</section>
+<!-- plant -->
+<div id="blog" class="plants">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 ">
+                <div class="titlepage">
+                    <h2>Kovrak Blog</h2>
+                    <span>Ispum lorem </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            {% for i in blog %}
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                <div class="plants-box">
+                    <figure><img src="{{i.img.url}}" alt="img"/></figure>
+                    <h3>{{i.name}}</h3>
+                    <p>{{i.info}}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- end plant -->
+<!-- about -->
+<div style="background-color: black" id="about" class="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                    <div style="margin-top: 10rem" class="about-box">
+                        <h2>90%</h2>
+                        <div class="white-bg">
+                            <span>Satisfaction</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div class="about-box">
+                    <div style="text-align: center;" class="titlepage">
+                        <h2>About US</h2>
+                        {% for i in about %}
+                        <span>{{i.info}}</span>
+                        {% endfor %}
+                        <div class="read-more">
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end about -->
+<!--Gallery -->
+<div id="gallery" class="Gallery">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="titlepage">
+                    <h2>Hujjatlar </h2>
+                    <p><a href="{% url 'qr_all' %}">Barcha QR-code lar</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid margin-r-l">
+        <div class="row">
+            {% for i in hujjatlar %}
+            <div class="dd col-xl-3 col-lg-3 col-md-3 col-sm-12 thumb">
+                <div style="text-align: center" class="Gallery-box">
+                    <h1>{{i.name}}</a></h1>
+                    <figure>
+                        <div>
+                            <a class="hh" href="{{i.file.url}}" download ><span>Yuklash</span><span>
+                                {{ i.file_type }}
+                            </span></a>
+                        </div>
+                    </figure>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <!-- end Gallery -->
+    <!--contact -->
+    <div id="contact" class="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="titlepage">
+                        <h2 style="text-align: center">Contact Us</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 paddimg-right">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                            <form method="post" action="{% url 'index' %}">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                        <input class="form-control" placeholder="Name" type="text" name="name">
+                                    </div>
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                        <input class="form-control" placeholder="Email" type="text" name="email">
+                                    </div>
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                        <input class="form-control" placeholder="Phone" type="text" name="phone">
+                                    </div>
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                        <input type="text" class="form-control" placeholder="Message" name="message">
+                                    </div>
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                        <button style="background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;" type="submit">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="row">
+
+
+                            </div>
+                    </div>
+                </div>
+                <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 paddimg-left">
+                    <div class="Nursery-img">
+                        <figure>
+                            <img style="width: 1000px;height: 366.9px" src="{% static 'kovrak.jpg' %}" alt="img"/>
+
+                    </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end contact -->
+<!-- footer -->
+<footer>
+    <div id="contact" class="footer">
+        <div class="container">
+            <div class="row pdn-top-30">
+                <div class="col-md-12 ">
+                    <div class="footer-box">
+                        <div class="headinga">
+                            <h3>Address</h3>
+                            <span>Dekhkanabad, karashina</span>
+                            <p>(+998 93 424 40 02)</p>
+                        </div>
+                        <ul class="location_icon">
+                            <li><a href="#"><img src="{% static 'icon/facebook.png' %}"></a></li>
+                            <li><a href="#"><img src="{% static 'icon/Twitter.png' %}"></a></li>
+                            <li><a href="#"><img src="{% static 'icon/instagram.png' %}"></a></li>
+                        </ul>
+                        <div class="menu-bottom">
+                            <ul class="link">
+                                <li><a href="#">Asosiy</a></li>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Haqida</a></li>
+                                <li><a href="#">Hujjatlar</a></li>
+                                <li><a href="#">Bog'lanish</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- end footer -->
+<!-- Javascript files-->
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'js/jquery-3.0.0.min.js' %}"></script>
+<script src="{% static 'js/plugin.js' %}"></script>
+<!-- sidebar -->
+<script src="{% static 'js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+<!-- javascript -->
+<script src="{% static 'js/owl.carousel.js' %}"></script>
+<script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".fancybox").fancybox({
+            openEffect: "none",
+            closeEffect: "none"
+        });
+
+        $(".zoom").hover(function () {
+
+            $(this).addClass('transition');
+        }, function () {
+
+            $(this).removeClass('transition');
+        });
+    });
+
+</script>
+</body>
+</html>
